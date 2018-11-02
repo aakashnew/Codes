@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN"
+          "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+
+<struts-config>
+	<form-beans>
+		<form-bean name="Addproductform" type="com.form.AddProductForm">
+		</form-bean>
+
+		<form-bean name="dynaCustomerListForm" type="org.apache.struts.action.DynaActionForm">
+			<form-property name="productlist" type="java.util.List" />
+		</form-bean>
+
+	</form-beans>
+
+	<action-mappings>
+
+		<action path="/AddProductPage" type="org.apache.struts.actions.ForwardAction"
+			parameter="/Addproduct.jsp">
+		</action>
+
+		<action path="/AddProduct" type="com.action.AddProductAction"
+			name="Addproductform" input="/Addproduct.jsp" scope="request">
+
+
+			<forward name="success" redirect="true" path="/ListProduct.do" />
+		</action>
+
+
+
+
+		<action path="/ListProduct" type="com.action.ListProductAction"
+			name="dynaCustomerListForm">
+
+			<forward name="success" path="/ListProduct.jsp" />
+		</action>
+
+
+	</action-mappings>
+
+ <form-beans>
+<form-bean name="Addproductform"   
+     type="com.form.AddProductForm" >
+     
+</form-bean>
+
+</form-beans>
+
+
+
+
+	<action-mappings>
+
+		<action path="/DeleteProductPage" 
+		type="org.apache.struts.actions.ForwardAction"
+			parameter="/DeleteProduct.jsp">
+		</action>
+
+		<action path="/deleteProduct" 
+		type="com.action.DeleteProductAction"
+			name="Addproductform" 
+			
+			input="/DeleteProduct.jsp" scope="request">
+
+
+			<forward name="delete" redirect="true" path="/deleted.jsp" />
+		</action>
+
+
+</action-mappings>
+
+<action-mappings>
+
+		<action path="/UpdateProductPage" 
+		type="org.apache.struts.actions.ForwardAction"
+			parameter="/UpdateProduct.jsp">
+		</action>
+
+		<action path="/updateProduct" 
+		type="com.action.UpdateProductAction"
+			name="Addproductform" 
+			
+			input="/UpdateProduct.jsp" scope="request">
+
+
+			<forward name="update" redirect="true" path="/update.jsp" />
+		</action>
+
+
+</action-mappings>
+
+
+
+
+
+
+
+
+
+
+<action-mappings>
+<action
+path="/ListProductPage"
+type="com.action.ListProductAction"
+name="dynaCustomerListForm"
+>	
+
+<forward name="success" path="/ListProduct.jsp"/>
+</action> 
+
+
+</action-mappings>
+
+
+
+
+		<message-resources parameter="com/common/ApplicationResources" />
+
+</struts-config>          

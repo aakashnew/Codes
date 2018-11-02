@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.bytecode.use_reflection_optimizer">false</property>
+		<property name="hibernate.connection.password">tspl@123</property>
+		<property name="hibernate.connection.url">jdbc:jtds:sqlserver://204.246.56.24/mobilestore</property>
+		<property name="hibernate.connection.username">mobilestore</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+		 <property name="connection.driver_class">net.sourceforge.jtds.jdbc.Driver</property>
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+		<property name="use_sql_comments">false</property>
+		 <!-- <property name="hibernate.hbm2ddl.auto"></property> -->
+		<mapping resource="com/hbm/Product.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>
